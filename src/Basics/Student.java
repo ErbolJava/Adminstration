@@ -2,22 +2,49 @@ package Basics;
 
 import Basics.Gender;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
     private String firstName;
     private String lastName;
     private String emailAddress;
     private String password;
     private Gender gender;
+    private List<Lesson> lessons = new ArrayList<>();
 
     @Override
     public String toString() {
-        return "Basics.Student{" +
+        return "Student{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
                 ", password='" + password + '\'' +
                 ", gender=" + gender +
+                ", lesson=" + lessons +
                 '}';
+    }
+    public List<Lesson> getLesson() {
+        return lessons;
+    }
+
+    public void setLesson(List<Lesson> lesson) {
+        this.lessons = lesson;
+    }
+
+    public Student(String firstName, String lastName, String emailAddress, String password, Gender gender, List<Lesson> lesson) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+        this.password = password;
+        this.gender = gender;
+        this.lessons = lesson;
+    }
+
+
+
+    public Student() {
+
     }
 
     public String getFirstName() {
@@ -37,6 +64,7 @@ public class Student {
     }
 
     public String getEmailAddress() {
+
         return emailAddress;
     }
 
@@ -60,11 +88,4 @@ public class Student {
         this.gender = gender;
     }
 
-    public Student(String firstName, String lastName, String emailAddress, String password, Gender gender) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.emailAddress = emailAddress;
-        this.password = password;
-        this.gender = gender;
-    }
 }

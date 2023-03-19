@@ -12,27 +12,27 @@ public interface AdministrationInterface {
 
     void getGroupByName(List<Group> groups);
 
-    Group upgradingGroupName(List<Group>groups) throws MyExc;
+    Group upDatingGroupName(List<Group>groups) throws MyExc;
 
     void getAllGroups(List<Group> groups);
 
     List<Group> addStudentToGroup(List<Group>groups);
 
-    List<Group> updatingStudent(String oldFirstName, String oldLastName, String newFirstName, String newLastname);
+    List<Group> updatingStudent(List<Group>groups);
 
     Student getStudentByFirstName(List<Group> groups);
 
     List<Student> getAllStudentsByGroupName(List<Group> groups);
 
-    String addLessonToGroup(List<Group> groups, String inputName, String inputDescription);
+    Group addLessonToGroup(List<Group> groups);
 
-    Lesson getAllStudentsLessons(List<Student> students);
+    List<Lesson> getAllStudentsLessons(List<Group> groups);
 
-    String deletingStudent(List<Student> students);
+    String deletingStudent(List<Group>groups);
 
     Lesson gettingLessonByName(List<Group> groups);
 
-    List<Lesson> gettingAllLessonsByGroupsName(List<Lesson> lessons, List<Group> groups);
+    List<Lesson> gettingAllLessonsByGroupsName(List<Group> groups);
 
     String removingLesson(List<Group> groups);
 

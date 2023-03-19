@@ -1,5 +1,6 @@
 package Basics;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,8 +8,8 @@ public class Group {
     private int id;
     private String groupName;
     private String description;
-    Lesson[] lessons;
-    Student[] students;
+    List<Lesson> lessons = new ArrayList<>();
+    List<Student> students = new ArrayList<>();
 
     public Group() {
 
@@ -20,9 +21,9 @@ public class Group {
                 "id=" + id +
                 ", groupName='" + groupName + '\'' +
                 ", description='" + description + '\'' +
-                ", lessons=" + Arrays.toString(lessons) +
-                ", students=" + Arrays.toString(students) +
-                '}';
+                ", lessons=" + lessons +
+                ", students=" + students +
+                "}\n";
     }
 
     public int getId() {
@@ -49,23 +50,23 @@ public class Group {
         this.description = description;
     }
 
-    public Lesson[] getLessons() {
+    public List<Lesson> getLessons() {
         return lessons;
     }
 
-    public void setLessons(Lesson[] lessons) {
+    public void setLessons(List<Lesson> lessons) {
         this.lessons = lessons;
     }
 
-    public Student[] getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(Student[] students) {
+    public void setStudents(List<Student> students) {
         this.students = students;
     }
 
-    public Group(int id, String groupName, String description, Lesson[] lessons, Student[] students) {
+    public Group(int id, String groupName, String description, List<Lesson> lessons, List<Student> students) {
         this.id = id;
         this.groupName = groupName;
         this.description = description;
